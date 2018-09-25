@@ -1,0 +1,40 @@
+<% include partials/header.ejs %>
+<div class="ui main text container segment">
+    <div class="ui huge header center" center><%= startup.nome %></div>
+    <div class="ui top attached">
+        <div class="item center">
+            <div class="description">
+                <image class="image" src="<%= startup.image %>"></image>
+            </div>
+            <div class="description">
+                <b>Descrição: </b>
+                <p><%- startup.descricao %></p>
+            </div>
+            <div class="description">
+                <b>Objetivo: </b>
+                <p><%- startup.objetivo %></p>
+            </div>
+            <div class="description">
+                <b>Projeto em Desenvolvimento: </b>
+                <p><%- startup.prjDensenvolvimento %></p>
+            </div>
+            <div class="description">
+                <b>Projeto de Interesse: </b>
+                <p><%- startup.prjInteresse %></p>
+            </div>
+            <div class="description">
+                <b>Área de Interesse: </b>
+                <p><%- startup.area %></p>
+            </div>
+            <div class="description">
+                <b>Site: </b>
+                <p><%- startup.site %></p>
+            </div>
+            <a class="ui green basic button" href="/startups/<%= startup._id %>/edit">Edit</a>
+            <form id="delete" action="/startups/<%= startup._id %>?_method=delete" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>

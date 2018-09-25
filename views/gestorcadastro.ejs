@@ -1,0 +1,35 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Cadastrar Gestor</div>
+    <form class="ui form" action="/gestores" method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="gestor[nome]" placeholder="Nome">
+        </div>
+        <div class="custom-file mb-3">
+            <input type="file" name="file" id=file class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <div class="field">
+            <label>Cargo</label>
+            <input type="text" name="gestor[cargo]" placeholder="Cargo">
+        </div>
+        <div class="field">
+            <label>E-Mail</label>
+            <input type="text" name="gestor[email]" placeholder="E-Mail">
+        </div>
+        <div class="field">
+            <label>Telefone</label>
+            <input type="text" name="gestor[telefone]" placeholder="Telefone">
+        </div>
+        <div class="field">
+            <labe>Descrição</labe>
+            <textarea name="gestor[descricao]"></textarea>
+        </div>
+        <input class="ui purple big basic button" type="submit">
+        
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

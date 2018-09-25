@@ -1,0 +1,35 @@
+<% include partials/header.ejs %>
+<div class="ui main text container">
+    <div class="ui huge header">Noticias PTS</div>
+    <a href="/noticias/cadastrar" class="ui button">Cadastrar Noticias</a>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% noticias.forEach(function(noticia){ %>
+                <div class="item">
+                    <div class="content">
+                        <div class="meta">
+                            <image class="image" src="<%= noticia.image %>"></image>
+                        </div>
+                        <div class="meta">
+                            <b><%= noticia.titulo %></b>
+                        </div>
+                        <div class="description">
+                            <p><%- noticia.desc.substring(0, 100) %>...</p>
+                        </div>
+                        <div class="meta">
+                            <span><%= noticia.created.toLocaleString() %></span>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet button" href="/noticias/<%= noticia._id %>">
+                                Read More<i class="right chevron icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

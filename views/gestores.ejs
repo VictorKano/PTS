@@ -1,0 +1,39 @@
+<% include partials/header.ejs %>
+<div class="ui main text container">
+    <div class="ui huge header">Gestores PTS</div>
+    <a href="/gestores/cadastrar" class="ui button">Cadastrar Gestores</a>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% gestores.forEach(function(gestor){ %>
+                <div class="item">
+                    <div class="content">
+                        <a class="header" href="/gestores/<%= gestor._id %>"><%= gestor.nome %></a>
+                        <div class="meta">
+                            <image class="image" src="<%= gestor.image %>"></image>
+                        </div>
+                        <div class="meta">
+                            <span><%= gestor.email %></span>
+                        </div>
+                        <div class="meta">
+                            <span><%= gestor.telefone %></span>
+                        </div>
+                        <div class="description">
+                            <p><%- gestor.descricao.substring(0, 100) %>...</p>
+                        </div>
+                        <div class="meta">
+                            <span><%= gestor.created.toDateString() %></span>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet button" href="/gestores/<%= gestor._id %>">
+                                Read More<i class="right chevron icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Mudar foto</div>
+    <form class="ui form" action="/noticias/<%= noticia._id %>" method="POST" enctype="multipart/form-data">
+        <div class="custom-file mb-3">
+            <input type="file" name="file" id=file class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <input class="ui purple basic button" type="submit" value="Mudar Foto">
+    </form>
+    <form class="ui form" action="/noticias/<%= noticia._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Título</label>
+            <input type="text" name="noticia[titulo]" placeholder="Título" value="<%= noticia.titulo %>">
+        </div>
+        <div class="field">
+            <labe>Corpo</labe>
+            <textarea name="noticia[desc]"><%= noticia.desc %></textarea>
+        </div>
+        <input class="ui purple big basic button" type="submit">
+        
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

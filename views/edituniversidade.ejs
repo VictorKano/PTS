@@ -1,0 +1,46 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Mudar foto <%= universidade.nome %></div>
+    <form class="ui form" action="/universidades/<%= universidade._id %>" method="POST" enctype="multipart/form-data">
+        <div class="custom-file mb-3">
+            <input type="file" name="file" id=file class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <input class="ui purple basic button" type="submit" value="Mudar Foto">
+    </form>
+    <form class="ui form" action="/universidades/<%= universidade._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="universidade[nome]" placeholder="Nome" value="<%= universidade.nome %>">
+        </div>
+        <div class="field">
+            <labe>Descrição</labe>
+            <textarea name="universidade[descricao]"><%= universidade.descricao %></textarea>
+        </div>
+        <div class="field">
+            <labe>Objetivo</labe>
+            <textarea name="universidade[objetivo]"><%= universidade.objetivo %></textarea>
+        </div>
+        <div class="field">
+            <labe>Projetos em Desenvolvimento</labe>
+            <textarea name="universidade[prjDesenvolvimento]"><%= universidade.prjDesenvolvimento %></textarea>
+        </div>
+        <div class="field">
+            <labe>Projetos de Interesse</labe>
+            <textarea name="universidade[prjInteresse]"><%= universidade.prjInteresse %></textarea>
+        </div>
+        <div class="field">
+            <labe>Área de Interesse</labe>
+            <textarea name="universidade[area]"><%= universidade.area %></textarea>
+        </div>
+        <div class="field">
+            <label>Site</label>
+            <input type="text" name="universidade[site]" placeholder="Site" value="<%= universidade.site %>">
+        </div>
+        <input class="ui purple big basic button" type="submit">
+        
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

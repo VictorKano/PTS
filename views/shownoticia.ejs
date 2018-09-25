@@ -1,0 +1,25 @@
+<% include partials/header.ejs %>
+<div class="ui main text container segment">
+    <div class="ui top attached">
+        <div class="item center">
+            <div class="description">
+                <image class="image" src="<%= noticia.image %>"></image>
+            </div>
+            <div class="meta">
+                <b><%= noticia.titulo %></b>
+            </div>
+            <div class="meta">
+                <p><%= noticia.created %></p>
+            </div>
+            <div class="description">
+                <b>Descrição: </b>
+                <p><%- noticia.desc %></p>
+            </div>
+            <a class="ui green basic button" href="/noticias/<%= noticia._id %>/edit">Edit</a>
+            <form id="delete" action="/noticias/<%= noticia._id %>?_method=delete" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>

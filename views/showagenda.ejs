@@ -1,0 +1,25 @@
+<% include partials/header.ejs %>
+<div class="ui main text container segment">
+    <div class="ui top attached">
+        <div class="item center">
+            <div class="description">
+                <image class="image" src="<%= agenda.image %>"></image>
+            </div>
+            <div class="meta">
+                <b><%= agenda.titulo %></b>
+            </div>
+            <div class="meta">
+                <p><%= agenda.created %></p>
+            </div>
+            <div class="description">
+                <b>Descrição: </b>
+                <p><%- agenda.desc %></p>
+            </div>
+            <a class="ui green basic button" href="/agendas/<%= agenda._id %>/edit">Edit</a>
+            <form id="delete" action="/agendas/<%= agenda._id %>?_method=delete" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>

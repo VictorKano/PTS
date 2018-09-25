@@ -1,0 +1,35 @@
+<% include partials/header.ejs %>
+<div class="ui main text container segment">
+    <div class="ui huge header center"><%= residentes.nome %></div>
+    <div class="ui top attached">
+        <div class="item center">
+            <div class="description">
+                <image src="<%= residentes.image %>"></image>
+            </div>
+            <div class="description">
+                <p><%- residentes.cargo %></p>
+            </div>
+            <div class="description">
+                <b>Empresa: </b>
+                <p><%- residentes.empresa %></p>
+            </div>
+            <div class="description">
+                <b>E-Mail: </b>
+                <p><%- residentes.email %></p>
+            </div>
+            <div class="description">
+                <b>Telefone: </b>
+                <p><%- residentes.telefone %></p>
+            </div>
+            <div class="description">
+                <b>Descrição: </b>
+                <p><%- residentes.descricao %></p>
+            </div>
+            <a class="ui green basic button" href="/residentes/<%= residentes._id %>/edit">Edit</a>
+            <form id="delete" action="/residentes/<%= residentes._id %>?_method=delete" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>

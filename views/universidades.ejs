@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+<div class="ui main text container">
+    <div class="ui huge header">Universidades PTS</div>
+    <a href="/universidades/cadastrar" class="ui button">Cadastrar Universidades</a>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% universidades.forEach(function(universidade){ %>
+                <div class="item">
+                    <div class="content">
+                        <a class="header" href="/Universidades/<%= universidade._id %>"><%= universidade.nome %></a>
+                        <div class="meta">
+                            <image class="image" src="<%= universidade.image %>"></image>
+                        </div>
+                        <div class="description">
+                            <p><%- universidade.descricao.substring(0, 100) %>...</p>
+                        </div>
+                        <div class="meta">
+                            <span><%= universidade.created.toDateString() %></span>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet button" href="/universidades/<%= universidade._id %>">
+                                Read More<i class="right chevron icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

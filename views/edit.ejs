@@ -1,0 +1,42 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui medium header">Mudar foto <%= residentes.nome %></div>    
+    <form class="ui form" action="/residentes/<%= residentes._id %>" method="POST" enctype="multipart/form-data">
+        <div class="custom-file mb-3">
+            <input type="file" name="file" id=file class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <input class="ui purple basic button" type="submit" value="Mudar Foto">
+    </form>
+   <div class="ui medium header">Mudar dados <%= residentes.nome %></div>   
+    <form class="ui form" action="/residentes/<%= residentes._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="residente[nome]" placeholder="Nome" value="<%= residentes.nome %>">
+        </div>
+        <div class="field">
+            <label>Cargo</label>
+            <input type="text" name="residente[cargo]" placeholder="Cargo" value="<%= residentes.cargo %>">
+        </div>
+        <div class="field">
+            <label>Empresa</label>
+            <input type="text" name="residente[empresa]" placeholder="Empresa" value="<%= residentes.empresa %>">
+        </div>
+        <div class="field">
+            <label>E-Mail</label>
+            <input type="text" name="residente[email]" placeholder="E-Mail" value="<%= residentes.email %>">
+        </div>
+        <div class="field">
+            <label>Telefone</label>
+            <input type="text" name="residente[telefone]" placeholder="Telefone" value="<%= residentes.telefone %>">
+        </div>
+        <div class="field">
+            <labe>Descrição</labe>
+            <textarea name="residente[descricao]"><%= residentes.descricao %></textarea>
+        </div>
+        <input class="ui purple big basic button" type="submit">
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,35 @@
+<% include partials/header.ejs %>
+<div class="ui main text container">
+    <div class="ui huge header">Agendas PTS</div>
+    <a href="/agendas/cadastrar" class="ui button">Cadastrar Agendas</a>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% agendas.forEach(function(agenda){ %>
+                <div class="item">
+                    <div class="content">
+                        <div class="meta">
+                            <image class="image" src="<%= agenda.image %>"></image>
+                        </div>
+                        <div class="meta">
+                            <b><%= agenda.titulo %></b>
+                        </div>
+                        <div class="description">
+                            <p><%- agenda.desc.substring(0, 100) %>...</p>
+                        </div>
+                        <div class="meta">
+                            <span><%= agenda.created.toDateString() %></span>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet button" href="/agendas/<%= agenda._id %>">
+                                Read More<i class="right chevron icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,43 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Cadastrar Empresa</div>
+    <form class="ui form" action="/empresas" method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="empresa[nome]" placeholder="Nome">
+        </div>
+        <div class="custom-file mb-3">
+            <input type="file" name="file" id=file class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <div class="field">
+            <labe>Descrição</labe>
+            <textarea name="empresa[descricao]"></textarea>
+        </div>
+        <div class="field">
+            <labe>Objetivo</labe>
+            <textarea name="empresa[objetivo]"></textarea>
+        </div>
+        <div class="field">
+            <labe>Projetos em Desenvolvimento</labe>
+            <textarea name="empresa[prjDesenvolvimento]"></textarea>
+        </div>
+        <div class="field">
+            <labe>Projetos de Interesse</labe>
+            <textarea name="empresa[prjInteresse]"></textarea>
+        </div>
+        <div class="field">
+            <labe>Área de Interesse</labe>
+            <textarea name="empresa[area]"></textarea>
+        </div>
+        <div class="field">
+            <label>Site</label>
+            <input type="text" name="empresa[site]" placeholder="Site">
+        </div>
+        <input class="ui purple big basic button" type="submit">
+        
+    </form>
+</div>
+
+<% include partials/footer.ejs %>
