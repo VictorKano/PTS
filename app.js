@@ -214,6 +214,7 @@ app.get("/residentes/json", function(req, res){
 
 app.get("/gestores/json", function(req, res){
     Gestor.find({}).sort('created').exec(function(err, gestores){
+    	console.log('teste');
         return res.end(JSON.stringify(gestores));
     });
 });
